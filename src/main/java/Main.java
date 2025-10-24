@@ -319,7 +319,7 @@ public class Main {
         }
         
         if (!resposta.getPublicacoesPorPlataforma().isEmpty()) {
-            System.out.println("\n TEMPO POR PLATAFORMA:");
+            System.out.println("\n PUBLICAÇÕES POR PLATAFORMA:");
             resposta.getPublicacoesPorPlataforma().forEach((plataforma, publicacoes) -> {
                 System.out.println("   " + plataforma + ": " + publicacoes.size() + " publicação(ões)");
                 if (resposta.getErros().isEmpty() || resposta instanceof RespostaUnificada) {
