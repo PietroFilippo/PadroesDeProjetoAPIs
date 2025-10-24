@@ -40,7 +40,7 @@ public class Main {
             demonstrarAlternanciaStrategy();
             
             System.out.println("\n" + "=".repeat(80));
-            System.out.println("DEMONSTRAÇÃO CONCLUÍDA COM SUCESSO!");
+            System.out.println("DEMONSTRAÇÃO CONCLUÍDA COM SUCESSO");
             System.out.println("=".repeat(80));
             
         } catch (Exception e) {
@@ -63,7 +63,7 @@ public class Main {
             .ativa(true)
             .build();
         gerenciador.adicionarPlataforma(configTwitter);
-        System.out.println("✓ Twitter configurado e autenticado");
+        System.out.println("Twitter configurado e autenticado");
 
         // Configurando Instagram
         ConfiguracaoPlataforma configInstagram = new ConfiguracaoPlataforma.Builder()
@@ -72,7 +72,7 @@ public class Main {
             .ativa(true)
             .build();
         gerenciador.adicionarPlataforma(configInstagram);
-        System.out.println("✓ Instagram configurado e autenticado");
+        System.out.println("Instagram configurado e autenticado");
 
         // Configurando LinkedIn
         ConfiguracaoPlataforma configLinkedIn = new ConfiguracaoPlataforma.Builder()
@@ -81,7 +81,7 @@ public class Main {
             .ativa(true)
             .build();
         gerenciador.adicionarPlataforma(configLinkedIn);
-        System.out.println("✓ LinkedIn configurado e autenticado");
+        System.out.println("LinkedIn configurado e autenticado");
 
         // Configurando TikTok
         ConfiguracaoPlataforma configTikTok = new ConfiguracaoPlataforma.Builder()
@@ -90,7 +90,7 @@ public class Main {
             .ativa(true)
             .build();
         gerenciador.adicionarPlataforma(configTikTok);
-        System.out.println("✓ TikTok configurado e autenticado");
+        System.out.println("TikTok configurado e autenticado");
 
         System.out.println("\nPlataformas ativas: " + gerenciador.getPlataformasAtivas());
     }
@@ -102,7 +102,7 @@ public class Main {
 
         // Criando conteúdo
         Conteudo conteudo = new Conteudo.Builder()
-            .texto("Lançamento da nova campanha de marketing digital! 🚀")
+            .texto("Lançamento da nova campanha de marketing digital!")
             .hashtags(Arrays.asList("Marketing", "Digital", "Inovacao"))
             .midias(Arrays.asList("https://cdn.example.com/imagem1.jpg"))
             .tipo(TipoConteudo.POST)
@@ -306,20 +306,20 @@ public class Main {
     }
 
     private static void exibirResposta(RespostaUnificada resposta) {
-        System.out.println("\n📊 RESULTADO:");
+        System.out.println("\nRESULTADO:");
         System.out.println("   Total de publicações: " + resposta.getTotalPublicacoes());
-        System.out.println("   ✓ Sucesso: " + resposta.getSucesso());
-        System.out.println("   ✗ Falhas: " + resposta.getFalhas());
-        System.out.println("   ⏰ Agendadas: " + resposta.getAgendadas());
+        System.out.println("   V Sucesso: " + resposta.getSucesso());
+        System.out.println("   X Falhas: " + resposta.getFalhas());
+        System.out.println("   Agendadas: " + resposta.getAgendadas());
         System.out.println("   Taxa de sucesso: " + String.format("%.1f%%", resposta.getTaxaSucesso()));
         
         if (!resposta.getErros().isEmpty()) {
-            System.out.println("\n❌ ERROS:");
+            System.out.println("\nERROS:");
             resposta.getErros().forEach(erro -> System.out.println("   - " + erro));
         }
         
         if (!resposta.getPublicacoesPorPlataforma().isEmpty()) {
-            System.out.println("\n📱 POR PLATAFORMA:");
+            System.out.println("\n TEMPO POR PLATAFORMA:");
             resposta.getPublicacoesPorPlataforma().forEach((plataforma, publicacoes) -> {
                 System.out.println("   " + plataforma + ": " + publicacoes.size() + " publicação(ões)");
                 if (resposta.getErros().isEmpty() || resposta instanceof RespostaUnificada) {
